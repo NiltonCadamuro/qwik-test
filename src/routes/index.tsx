@@ -1,16 +1,14 @@
 import { component$ } from "@builder.io/qwik";
 import type { DocumentHead } from "@builder.io/qwik-city";
+import { Container } from "~/components/Container";
+import { GalleryPosts } from "~/components/GalleryPosts";
 
 export default component$(() => {
   return (
     <>
-      <h1>Hi 👋</h1>
-      <div class="bg-red-800">
-        Can't wait to see what you build with qwik!
-        <br />
-        Happy coding.
-      </div>
-      <a href="/post">post</a>
+      <Container>
+        <GalleryPosts />
+      </Container>
     </>
   );
 });
