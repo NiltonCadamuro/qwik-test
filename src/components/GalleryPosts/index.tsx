@@ -14,6 +14,8 @@ export const GalleryPosts = component$(() => {
       thumbUrl: "https://fakeimg.pl/150x80/",
       author: "Author 1",
       id: 1,
+      authorPhoto: "https://fakeimg.pl/150x150/",
+      authorDescription: "Author description",
     },
     {
       title: "Post 1",
@@ -22,6 +24,8 @@ export const GalleryPosts = component$(() => {
       thumbUrl: "https://fakeimg.pl/150x80/",
       author: "Author 1",
       id: 1,
+      authorPhoto: "https://fakeimg.pl/150x150/",
+      authorDescription: "Author description",
     },
     {
       title: "Post 1",
@@ -30,6 +34,8 @@ export const GalleryPosts = component$(() => {
       thumbUrl: "https://fakeimg.pl/150x80/",
       author: "Author 1",
       id: 1,
+      authorPhoto: "https://fakeimg.pl/150x150/",
+      authorDescription: "Author description",
     },
     {
       title: "Post 1",
@@ -38,6 +44,8 @@ export const GalleryPosts = component$(() => {
       thumbUrl: "https://fakeimg.pl/150x80/",
       author: "Author 1",
       id: 1,
+      authorPhoto: "https://fakeimg.pl/150x150/",
+      authorDescription: "Author description",
     },
     {
       title: "Post 1",
@@ -46,6 +54,8 @@ export const GalleryPosts = component$(() => {
       thumbUrl: "https://fakeimg.pl/150x80/",
       author: "Author 1",
       id: 1,
+      authorPhoto: "https://fakeimg.pl/150x150/",
+      authorDescription: "Author description",
     },
     {
       title: "Post 1",
@@ -54,6 +64,8 @@ export const GalleryPosts = component$(() => {
       thumbUrl: "https://fakeimg.pl/150x80/",
       author: "Author 1",
       id: 1,
+      authorPhoto: "https://fakeimg.pl/150x150/",
+      authorDescription: "Author description",
     },
     {
       title: "Post 1",
@@ -62,6 +74,8 @@ export const GalleryPosts = component$(() => {
       thumbUrl: "https://fakeimg.pl/150x80/",
       author: "Author 1",
       id: 1,
+      authorPhoto: "https://fakeimg.pl/150x150/",
+      authorDescription: "Author description",
     },
     {
       title: "Post 1",
@@ -70,6 +84,8 @@ export const GalleryPosts = component$(() => {
       thumbUrl: "https://fakeimg.pl/150x80/",
       author: "Author 1",
       id: 1,
+      authorPhoto: "https://fakeimg.pl/150x150/",
+      authorDescription: "Author description",
     },
   ]);
 

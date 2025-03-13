@@ -1,38 +1,10 @@
-import { $, component$ } from "@builder.io/qwik";
+import { component$ } from "@builder.io/qwik";
 import { Title } from "../Title";
 import { useNavigate } from "@builder.io/qwik-city";
+import { formatDate } from "~/utils/formatDate";
 
 export const PostCard = component$(({ post }: { post: PostProps }) => {
   const nav = useNavigate();
-
-  const formatDate = $((dateString: string): string => {
-    const date = new Date(dateString);
-
-    if (isNaN(date.getTime())) {
-      throw new Error("Invalid date string");
-    }
-
-    const months = [
-      "Jan",
-      "Fev",
-      "Mar",
-      "Abr",
-      "May",
-      "Jun",
-      "Jul",
-      "Aug",
-      "Sep",
-      "Oct",
-      "Nov",
-      "Dec",
-    ];
-
-    const day = date.getDate();
-    const month = months[date.getMonth()];
-    const year = date.getFullYear();
-
-    return `${month} ${day}, ${year}`;
-  });
 
   return (
     <div
@@ -55,7 +27,7 @@ export const PostCard = component$(({ post }: { post: PostProps }) => {
           </Title>
           <div>
             <p class="text-xs text-[#A0A0A0]">
-              {formatDate(post.createdAt)}{" "}
+              {formatDate(post.createdAt, true)}{" "}
               <strong class="font-medium">by {post.author}</strong>
             </p>
           </div>

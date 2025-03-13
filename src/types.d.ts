@@ -12,6 +12,8 @@ declare global {
     content: string;
     thumbUrl: string;
     author: string;
+    authorPhoto: string;
+    authorDescription: string;
     id: number;
   }
 }

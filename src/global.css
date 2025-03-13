@@ -15,3 +15,15 @@
 body {
   @apply font-roboto text-secondary bg-surface-secondary;
 }
+
+.post-content {
+  p,
+  li,
+  span {
+    @apply text-secondary mb-4 text-base font-normal last:mb-0;
+  }
+
+  img {
+    @apply my-4 h-auto w-full overflow-hidden rounded-2xl object-contain;
+  }
+}
