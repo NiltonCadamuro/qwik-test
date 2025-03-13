@@ -1,3 +1,17 @@
 @import "tailwindcss";
 
+@theme {
+  --color-primary: #446980;
+  --color-secondary: #333;
+  --color-tertiary: #fff;
+  --color-surface-primary: #f5f5f5;
+  --color-surface-secondary: #fff;
+  --color-surface-tertiary: #f1f3f4;
+  --color-surface-quaternary: #446980;
+  --font-roboto: "Roboto", sans-serif;
+  --breakpoint-new-xm: 350px;
+}
 
+body {
+  @apply font-roboto text-secondary bg-surface-secondary;
+}
