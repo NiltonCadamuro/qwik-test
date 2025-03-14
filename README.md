@@ -1,65 +1,61 @@
-# Qwik City App ⚡️
+# 🚀 Qwik Project
+This is a Qwik project. The project consists of a frontend built with Qwik and a fake GraphQL API that serves as the backend. Below, you will find instructions on how to set up and run the project.
 
-- [Qwik Docs](https://qwik.dev/)
-- [Discord](https://qwik.dev/chat)
-- [Qwik GitHub](https://github.com/QwikDev/qwik)
-- [@QwikDev](https://twitter.com/QwikDev)
-- [Vite](https://vitejs.dev/)
+## 📦 Installation
+### Prerequisites
+Before running the project, make sure you have Node.js installed on your machine. This project was developed using:
 
----
+- Node.js v18.19.1 or higher
+- npm (Node Package Manager)
+If you don't have Node.js installed or are using a different version, consider using nvm to manage versions.
 
-## Project Structure
-
-This project is using Qwik with [QwikCity](https://qwik.dev/qwikcity/overview/). QwikCity is just an extra set of tools on top of Qwik to make it easier to build a full site, including directory-based routing, layouts, and more.
-
-Inside your project, you'll see the following directory structure:
+### Steps to Install
+Clone the repository:
 
 ```
-├── public/
-│   └── ...
-└── src/
-    ├── components/
-    │   └── ...
-    └── routes/
-        └── ...
+git clone <repository-url>
+cd <project-folder>
 ```
 
-- `src/routes`: Provides the directory-based routing, which can include a hierarchy of `layout.tsx` layout files, and an `index.tsx` file as the page. Additionally, `index.ts` files are endpoints. Please see the [routing docs](https://qwik.dev/qwikcity/routing/overview/) for more info.
+### Install dependencies:
 
-- `src/components`: Recommended directory for components.
-
-- `public`: Any static assets, like images, can be placed in the public directory. Please see the [Vite public directory](https://vitejs.dev/guide/assets.html#the-public-directory) for more info.
-
-## Add Integrations and deployment
-
-Use the `npm run qwik add` command to add additional integrations. Some examples of integrations includes: Cloudflare, Netlify or Express Server, and the [Static Site Generator (SSG)](https://qwik.dev/qwikcity/guides/static-site-generation/).
-
-```shell
-npm run qwik add # or `yarn qwik add`
+```
+npm install
 ```
 
-## Development
+## ▶️ Running the Project
+This project requires two terminals to run simultaneously: one for the backend (fake GraphQL API) and one for the frontend.
 
-Development mode uses [Vite's development server](https://vitejs.dev/). The `dev` command will server-side render (SSR) the output during development.
+### 1️⃣ Start the Fake GraphQL API
+In the first terminal, run:
 
-```shell
-npm start # or `yarn start`
+```
+npm run start-backend
+```
+This will start the fake GraphQL server.
+
+### 2️⃣ Start the Frontend
+In the second terminal, run:
+
+```
+npm run dev
 ```
 
-> Note: during dev mode, Vite may request a significant number of `.js` files. This does not represent a Qwik production build.
-
-## Preview
-
-The preview command will create a production build of the client modules, a production build of `src/entry.preview.tsx`, and run a local server. The preview server is only for convenience to preview a production build locally and should not be used as a production server.
-
-```shell
-npm run preview # or `yarn preview`
+This will start the Qwik application. By default, it should be available at:
+```
+http://localhost:5173/
 ```
 
-## Production
+## 🛠️ Technologies Used
+- Qwik - Frontend framework
+- GraphQL (Fake API)
+- Node.js v18.19.1 & npm - Package management
 
-The production build will generate client and server modules by running both client and server build commands. The build command will use Typescript to run a type check on the source code.
+## ❓ Need Help?
+If you encounter any issues, ensure you are using Node.js v18.19.1. You can check your version by running:
 
-```shell
-npm run build # or `yarn build`
 ```
+node -v
+```
+If you still experience problems, feel free to ask for help!
+
