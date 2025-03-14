@@ -20,7 +20,10 @@
     "lint": "eslint \"src/**/*.ts*\"",
     "preview": "qwik build preview && vite preview --open",
     "start": "vite --open --mode ssr",
-    "qwik": "qwik"
+    "qwik": "qwik",
+    "generate-data": "node generateData.js",
+    "start-server": "npx json-graphql-server db.json --port 4000",
+    "start-backend": "npm run generate-data && npm run start-server"
   },
   "devDependencies": {
     "@builder.io/qwik": "^1.12.1",
@@ -32,6 +35,8 @@
     "@typescript-eslint/parser": "7.16.1",
     "eslint": "8.57.0",
     "eslint-plugin-qwik": "^1.12.1",
+    "fs": "^0.0.1-security",
+    "json-graphql-server": "^3.2.0",
     "prettier": "3.3.3",
     "prettier-plugin-tailwindcss": "^0.6.11",
     "tailwindcss": "^4.0.0",
