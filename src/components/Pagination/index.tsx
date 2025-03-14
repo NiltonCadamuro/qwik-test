@@ -1,14 +1,12 @@
-import { component$ } from "@builder.io/qwik";
+import { component$, useContext } from "@builder.io/qwik";
+import { PostsContext } from "~/context/PostsContext";
 
 export const Pagination = component$(() => {
-  const mockPages = {
-    quantity: 100,
-    currentPage: 5,
-  };
+  const postsStore = useContext(PostsContext) as PostContextProps;
 
   const visiblePages = [];
-  const totalPages = mockPages.quantity;
-  const currentPage = mockPages.currentPage;
+  const totalPages = postsStore.totalPages;
+  const currentPage = postsStore.currentPage;
 
   if (currentPage > 2) visiblePages.push(1);
 
@@ -38,7 +36,13 @@ export const Pagination = component$(() => {
                 : ""
             }`}
             onClick$={() => {
-              console.log("Go to page", page);
+              postsStore.currentPage = page;
+              const startIndex = (page - 1) * 10;
+              const endIndex = startIndex + 10;
+              postsStore.filteredPosts = postsStore.posts.slice(
+                startIndex,
+                endIndex,
+              );
             }}
           >
             {page}

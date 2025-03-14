@@ -42,7 +42,7 @@ export const Modal = component$(() => {
             />
           </svg>
         </button>
-        <FormPost />
+        <FormPost close={closeModal} />
       </dialog>
     </>
   );

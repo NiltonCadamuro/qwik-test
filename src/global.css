@@ -20,7 +20,7 @@ body {
   p,
   li,
   span {
-    @apply text-secondary mb-4 text-base font-normal last:mb-0;
+    @apply text-secondary mb-4 text-base font-normal break-words break-all whitespace-break-spaces last:mb-0;
   }
 
   img {

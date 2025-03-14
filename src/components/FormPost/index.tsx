@@ -1,7 +1,11 @@
-import { $, component$, useSignal } from "@builder.io/qwik";
+import type { QRL } from "@builder.io/qwik";
+import { $, component$, useContext, useSignal } from "@builder.io/qwik";
 import { Title } from "../Title";
+import { PostsContext } from "~/context/PostsContext";
 
-export const FormPost = component$(() => {
+export const FormPost = component$(({ close }: { close: QRL<() => void> }) => {
+  const postsStore = useContext(PostsContext) as PostContextProps;
+
   const titleRef = useSignal<HTMLInputElement>();
   const contentRef = useSignal<HTMLTextAreaElement>();
   const thumbUrlRef = useSignal<HTMLInputElement>();
@@ -13,7 +17,25 @@ export const FormPost = component$(() => {
     const content = contentRef.value?.value;
     const thumbUrl = thumbUrlRef.value?.value;
 
-    console.log({ title, content, thumbUrl });
+    if (!title || !content || !thumbUrl) return;
+
+    postsStore.posts.push({
+      title,
+      content,
+      thumbUrl,
+      createdAt: new Date().toISOString(),
+      author: "You",
+      authorPhoto: "https://fakeimg.pl/150/?text=You",
+      authorDescription: "You are the author of this post",
+      id: postsStore.posts.length + 1,
+    });
+
+    postsStore.totalPages = Math.ceil(postsStore.posts.length / 10);
+    const startIndex = (postsStore.currentPage - 1) * 10;
+    const endIndex = startIndex + 10;
+    postsStore.filteredPosts = postsStore.posts.slice(startIndex, endIndex);
+
+    close();
   });
 
   return (

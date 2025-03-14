@@ -1,9 +1,11 @@
-import { component$, useSignal } from "@builder.io/qwik";
+import { component$, useContext, useSignal } from "@builder.io/qwik";
 import { Icon } from "../Icon";
+import { PostsContext } from "~/context/PostsContext";
 
 export default component$(() => {
   const searchFocus = useSignal(false);
   const inputRef = useSignal<HTMLInputElement>();
+  const postsStore = useContext(PostsContext) as PostContextProps;
 
   return (
     <div
@@ -21,7 +23,30 @@ export default component$(() => {
       <input
         ref={inputRef}
         onInput$={(_, el) => {
-          console.log(el.value);
+          const value = el.value;
+
+          if (value === "") {
+            postsStore.filteredPosts = postsStore.posts.slice(0, 10);
+            postsStore.totalPages = Math.ceil(postsStore.posts.length / 10);
+            postsStore.searchedTerm = null;
+            return;
+          }
+
+          postsStore.searchedTerm = value;
+
+          if (postsStore.currentPage !== 1) {
+            postsStore.currentPage = 1;
+          }
+
+          const searchedPosts = postsStore.posts.filter((post) => {
+            return post.title.toLowerCase().includes(value.toLowerCase());
+          });
+
+          postsStore.totalPages = Math.ceil(searchedPosts.length / 10);
+
+          const startIndex = (postsStore.currentPage - 1) * 10;
+          const endIndex = startIndex + 10;
+          postsStore.filteredPosts = searchedPosts.slice(startIndex, endIndex);
         }}
         onFocus$={() => (searchFocus.value = true)}
         onBlur$={() => (searchFocus.value = false)}

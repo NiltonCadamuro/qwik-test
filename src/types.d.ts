@@ -16,4 +16,13 @@ declare global {
     authorDescription: string;
     id: number;
   }
+
+  interface PostContextProps {
+    posts: PostProps[];
+    filteredPosts: PostProps[];
+    currentPage: number;
+    totalPages: number;
+    selectedPost: PostProps | null;
+    searchedTerm: string | null;
+  }
 }
