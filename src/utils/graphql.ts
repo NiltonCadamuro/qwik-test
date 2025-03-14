@@ -60,7 +60,6 @@ export async function fetchPostById(id: string) {
     });
 
     const json = await response.json();
-    console.log("json: ", json);
     return json?.data?.Post;
   } catch (error) {
     console.error("Err: ", error);

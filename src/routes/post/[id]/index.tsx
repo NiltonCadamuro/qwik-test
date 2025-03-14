@@ -36,7 +36,7 @@ export default component$(() => {
 
       Object.assign(post, data);
     } catch (error) {
-      console.error("Erro ao buscar post:", error);
+      console.error("Err:", error);
     }
   });
 

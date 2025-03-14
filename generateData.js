@@ -1,6 +1,5 @@
 import fs from "fs";
 
-// Função para gerar uma string aleatória
 const randomString = (length) => {
   const chars =
     "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789 ";
@@ -10,7 +9,6 @@ const randomString = (length) => {
   ).join("");
 };
 
-// Função para gerar uma data aleatória nos últimos 2 anos
 const randomDate = () => {
   const start = new Date();
   start.setFullYear(start.getFullYear() - 2);
@@ -19,10 +17,8 @@ const randomDate = () => {
   ).toISOString();
 };
 
-// Função para gerar um ID aleatório
 const randomId = () => Math.floor(Math.random() * 10000);
 
-// Função para gerar um array de posts aleatórios
 const generatePosts = (num = 10) => {
   return Array.from({ length: num }, () => ({
     id: randomId(),
@@ -36,12 +32,10 @@ const generatePosts = (num = 10) => {
   }));
 };
 
-// Criar banco de dados fake
 const db = {
-  posts: generatePosts(100), // Gera 15 posts aleatórios
+  posts: generatePosts(100),
 };
 
-// Salvar no arquivo JSON
 fs.writeFileSync("db.json", JSON.stringify(db, null, 2));
 
 console.log("📊 Dados aleatórios gerados com sucesso!");
